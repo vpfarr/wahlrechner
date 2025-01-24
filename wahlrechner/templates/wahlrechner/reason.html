@@ -1,7 +1,7 @@
 {% extends 'wahlrechner/base.html' %}
 {% load wahlrechner_extras %}
 
-{% block title %}Begründungen der Parteien zu These {{ index.0 }} von {{ index.1 }}{% endblock %}
+{% block title %}Begründungen der Kandidierenden zu These {{ index.0 }} von {{ index.1 }}{% endblock %}
 
 {% block sidebar %}
     {% include "wahlrechner/sidebar.html" with icon_default="skip" url_template="reason" %}
@@ -69,12 +69,12 @@
                     {% include "snippets/badge.html" with type=antwort.antwort_position pers="3" %}
                 </h2>
 
-                {# Begründung der Partei #}
+                {# Begründung der kandidierenden Person #}
                 <p class="text-sm text-left text-gray-600 dark:text-gray-300">
                     {% if antwort.antwort_text %}
                         "{{ antwort.antwort_text.strip }}"
                     {% else %}
-                        <i>Von der Partei liegt zu dieser These keine Begründung vor.</i>
+                        <i>Von der kandidierenden Person liegt zu dieser These keine Begründung vor.</i>
                     {% endif %}
                 </p>
 
@@ -84,7 +84,7 @@
 
     {% endfor %}
 
-    <div class="btn-row">
+    <div class="btn-row move-arrows">
         {% if these_prev %}
             {% url "reason" these_prev.pk zustand_current as url %}
             {% include "snippets/btn.html" with text="vorherige These" url=url icon="left" pos="l" sc="37" %}
