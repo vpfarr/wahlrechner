@@ -5,6 +5,11 @@ from pathlib import Path
 # Get Wahlrechner theme
 THEME = os.getenv("WAHLRECHNER_THEME", "theme_default")
 
+# Get URL prefix, add trailing slash.
+URL_PREFIX = os.getenv('URL_PREFIX', '')
+if URL_PREFIX:
+    URL_PREFIX = f"{URL_PREFIX}/"
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 
@@ -117,10 +122,10 @@ USE_TZ = True
 
 # Static and media files (CSS, JavaScript, Images)
 
-MEDIA_URL = "/media/"
+MEDIA_URL = f"/{URL_PREFIX}media/"
 MEDIA_ROOT = "/code/media/"
 
-STATIC_URL = "/static/"
+STATIC_URL = f"/{URL_PREFIX}static/"
 STATIC_ROOT = "/code/assets/"
 
 STATICFILES_DIRS = [

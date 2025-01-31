@@ -1,11 +1,13 @@
+import os
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path
+from core.settings import URL_PREFIX
 
 urlpatterns = [
-    path("", include("wahlrechner.urls")),
-    path("admin/", admin.site.urls),
+    path(f"{URL_PREFIX}", include("wahlrechner.urls")),
+    path(f"{URL_PREFIX}admin/", admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 admin.site.site_header = "Wahlrechner Admin"

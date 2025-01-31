@@ -1174,13 +1174,13 @@ body {
 }
 @font-face {
     font-family: 'FabrikatNormal';
-    src: url('/static/fonts/FabrikatNormal/FabrikatNormal-Regular.woff2') format('woff');
+    src: url('fonts/FabrikatNormal/FabrikatNormal-Regular.woff2') format('woff');
     font-weight: 500;
     font-style: normal;
 }
 @font-face {
     font-family: 'FabrikatNormal';
-    src: url('/static/fonts/FabrikatNormal/FabrikatNormal-Bold.woff2') format('woff');
+    src: url('fonts/FabrikatNormal/FabrikatNormal-Bold.woff2') format('woff');
     font-weight: 600;
     font-style: bold;
 }
